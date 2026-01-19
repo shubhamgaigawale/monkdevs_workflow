@@ -15,7 +15,7 @@ services:
   # API Gateway
   - type: web
     name: crm-api-gateway
-    runtime: java
+    env: java
     plan: free
     buildCommand: cd backend/api-gateway && mvn clean package -DskipTests
     startCommand: java -Xmx400m -jar backend/api-gateway/target/api-gateway-1.0.0.jar
@@ -46,7 +46,7 @@ services:
   # User Service
   - type: web
     name: crm-user-service
-    runtime: java
+    env: java
     plan: free
     buildCommand: cd backend/user-service && mvn clean package -DskipTests
     startCommand: java -Xmx400m -jar backend/user-service/target/user-service-1.0.0.jar
