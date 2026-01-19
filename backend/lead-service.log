@@ -1,0 +1,396 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+[32m :: Spring Boot :: [39m              [2m (v3.2.1)[0;39m
+
+[2m2026-01-10T22:45:09.315+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mc.c.leadservice.LeadServiceApplication  [0;39m [2m:[0;39m Starting LeadServiceApplication using Java 23.0.2 with PID 75516 (/Users/shubhamgaigawale/monkdevs_workflow/backend/lead-service/target/lead-service-1.0.0.jar started by shubhamgaigawale in /Users/shubhamgaigawale/monkdevs_workflow/backend)
+[2m2026-01-10T22:45:09.318+05:30[0;39m [32mDEBUG[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mc.c.leadservice.LeadServiceApplication  [0;39m [2m:[0;39m Running with Spring Boot v3.2.1, Spring v6.1.2
+[2m2026-01-10T22:45:09.319+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mc.c.leadservice.LeadServiceApplication  [0;39m [2m:[0;39m No active profile set, falling back to 1 default profile: "default"
+[2m2026-01-10T22:45:10.829+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Multiple Spring Data modules found, entering strict repository configuration mode
+[2m2026-01-10T22:45:10.830+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2m2026-01-10T22:45:10.967+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 132 ms. Found 4 JPA repository interfaces.
+[2m2026-01-10T22:45:10.977+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Multiple Spring Data modules found, entering strict repository configuration mode
+[2m2026-01-10T22:45:10.978+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[2m2026-01-10T22:45:10.997+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36m.RepositoryConfigurationExtensionSupport[0;39m [2m:[0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.crm.leadservice.repository.LeadAssignmentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2m2026-01-10T22:45:10.997+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36m.RepositoryConfigurationExtensionSupport[0;39m [2m:[0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.crm.leadservice.repository.LeadRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2m2026-01-10T22:45:10.997+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36m.RepositoryConfigurationExtensionSupport[0;39m [2m:[0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.crm.leadservice.repository.ExcelImportRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2m2026-01-10T22:45:10.997+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36m.RepositoryConfigurationExtensionSupport[0;39m [2m:[0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.crm.leadservice.repository.LeadHistoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2m2026-01-10T22:45:10.997+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+[2m2026-01-10T22:45:12.185+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port 8083 (http)
+[2m2026-01-10T22:45:12.193+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardService  [0;39m [2m:[0;39m Starting service [Tomcat]
+[2m2026-01-10T22:45:12.193+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardEngine   [0;39m [2m:[0;39m Starting Servlet engine: [Apache Tomcat/10.1.17]
+[2m2026-01-10T22:45:12.255+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/api]   [0;39m [2m:[0;39m Initializing Spring embedded WebApplicationContext
+[2m2026-01-10T22:45:12.255+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 2675 ms
+[2m2026-01-10T22:45:12.705+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.f.c.i.s.classpath.ClassPathScanner    [0;39m [2m:[0;39m Flyway OSS Edition 10.4.1 by Redgate
+[2m2026-01-10T22:45:12.705+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.f.c.i.s.classpath.ClassPathScanner    [0;39m [2m:[0;39m 
+[2m2026-01-10T22:45:12.705+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.f.c.i.s.classpath.ClassPathScanner    [0;39m [2m:[0;39m See release notes here: https://rd.gt/416ObMi
+[2m2026-01-10T22:45:12.716+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Starting...
+[2m2026-01-10T22:45:13.062+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mcom.zaxxer.hikari.pool.HikariPool       [0;39m [2m:[0;39m HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@255ed8e4
+[2m2026-01-10T22:45:13.064+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Start completed.
+[2m2026-01-10T22:45:13.087+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36morg.flywaydb.core.FlywayExecutor        [0;39m [2m:[0;39m Database: jdbc:postgresql://localhost:5432/crm_db (PostgreSQL 15.15)
+[2m2026-01-10T22:45:13.271+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.f.core.internal.command.DbValidate    [0;39m [2m:[0;39m Successfully validated 2 migrations (execution time 00:00.159s)
+[2m2026-01-10T22:45:13.292+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.f.core.internal.command.DbMigrate     [0;39m [2m:[0;39m Current version of schema "public": 1
+[2m2026-01-10T22:45:13.295+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.f.core.internal.command.DbMigrate     [0;39m [2m:[0;39m Schema "public" is up to date. No migration necessary.
+[2m2026-01-10T22:45:13.408+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.hibernate.jpa.internal.util.LogHelper [0;39m [2m:[0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
+[2m2026-01-10T22:45:13.454+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36morg.hibernate.Version                   [0;39m [2m:[0;39m HHH000412: Hibernate ORM core version 6.4.1.Final
+[2m2026-01-10T22:45:13.486+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.h.c.internal.RegionFactoryInitiator   [0;39m [2m:[0;39m HHH000026: Second-level cache disabled
+[2m2026-01-10T22:45:13.639+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.s.o.j.p.SpringPersistenceUnitInfo     [0;39m [2m:[0;39m No LoadTimeWeaver setup: ignoring JPA class transformer
+[2m2026-01-10T22:45:13.670+05:30[0;39m [33m WARN[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36morg.hibernate.orm.deprecation           [0;39m [2m:[0;39m HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2m2026-01-10T22:45:14.409+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.h.e.t.j.p.i.JtaPlatformInitiator      [0;39m [2m:[0;39m HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2m2026-01-10T22:45:14.478+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2m2026-01-10T22:45:14.816+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.s.d.j.r.query.QueryEnhancerFactory    [0;39m [2m:[0;39m Hibernate is in classpath; If applicable, HQL parser will be used.
+[2m2026-01-10T22:45:16.560+05:30[0;39m [33m WARN[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mJpaBaseConfiguration$JpaWebConfiguration[0;39m [2m:[0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2m2026-01-10T22:45:16.594+05:30[0;39m [33m WARN[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36m.s.s.UserDetailsServiceAutoConfiguration[0;39m [2m:[0;39m 
+
+Using generated security password: 62c5adc4-1ce0-441f-9313-5389ed975621
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2m2026-01-10T22:45:17.173+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.s.s.web.DefaultSecurityFilterChain    [0;39m [2m:[0;39m Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@381c78ea, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2baf9c62, org.springframework.security.web.context.SecurityContextHolderFilter@1f146411, org.springframework.security.web.header.HeaderWriterFilter@3ac09fe2, org.springframework.security.web.authentication.logout.LogoutFilter@4b4a5691, com.crm.common.security.filter.JwtAuthenticationFilter@44dfdd58, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2219d6d8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4907b487, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57202722, org.springframework.security.web.session.SessionManagementFilter@60f3813e, org.springframework.security.web.access.ExceptionTranslationFilter@79860b25, org.springframework.security.web.access.intercept.AuthorizationFilter@63be03c8]
+[2m2026-01-10T22:45:17.406+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port 8083 (http) with context path '/api'
+[2m2026-01-10T22:45:17.412+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [           main][0;39m [2m[0;39m[36mc.c.leadservice.LeadServiceApplication  [0;39m [2m:[0;39m Started LeadServiceApplication in 8.528 seconds (process running for 9.248)
+[2m2026-01-10T22:45:48.096+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [nio-8083-exec-1][0;39m [2m[0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/api]   [0;39m [2m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2m2026-01-10T22:45:48.096+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [nio-8083-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2026-01-10T22:45:48.097+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [nio-8083-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 1 ms
+[2m2026-01-10T22:45:48.163+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [nio-8083-exec-1][0;39m [2m[0;39m[36mc.crm.leadservice.service.LeadService   [0;39m [2m:[0;39m Fetching leads for tenant: 98097a9c-c167-404e-8507-be1bdf8d015e, user: 37e548f6-54bc-446b-aad3-a5f9b44e6f08, roles: [AGENT]
+Hibernate: 
+    select
+        l1_0.id,
+        l1_0.company,
+        l1_0.created_at,
+        l1_0.custom_fields,
+        l1_0.email,
+        l1_0.first_name,
+        l1_0.last_name,
+        l1_0.notes,
+        l1_0.phone,
+        l1_0.priority,
+        l1_0.source,
+        l1_0.status,
+        l1_0.tenant_id,
+        l1_0.updated_at 
+    from
+        lead_management.leads l1_0 
+    where
+        l1_0.tenant_id=? 
+        and l1_0.id in (select
+            la1_0.lead_id 
+        from
+            lead_management.lead_assignments la1_0 
+        where
+            la1_0.assigned_to=? 
+            and la1_0.is_current=true) 
+    order by
+        l1_0.created_at desc 
+    offset
+        ? rows 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        la1_0.id,
+        la1_0.assigned_at,
+        la1_0.assigned_by,
+        la1_0.assigned_to,
+        la1_0.assignment_type,
+        la1_0.created_at,
+        la1_0.is_current,
+        la1_0.lead_id,
+        la1_0.tenant_id,
+        la1_0.updated_at 
+    from
+        lead_management.lead_assignments la1_0 
+    where
+        la1_0.lead_id=? 
+        and la1_0.is_current
+Hibernate: 
+    select
+        la1_0.id,
+        la1_0.assigned_at,
+        la1_0.assigned_by,
+        la1_0.assigned_to,
+        la1_0.assignment_type,
+        la1_0.created_at,
+        la1_0.is_current,
+        la1_0.lead_id,
+        la1_0.tenant_id,
+        la1_0.updated_at 
+    from
+        lead_management.lead_assignments la1_0 
+    where
+        la1_0.lead_id=? 
+        and la1_0.is_current
+Hibernate: 
+    select
+        la1_0.id,
+        la1_0.assigned_at,
+        la1_0.assigned_by,
+        la1_0.assigned_to,
+        la1_0.assignment_type,
+        la1_0.created_at,
+        la1_0.is_current,
+        la1_0.lead_id,
+        la1_0.tenant_id,
+        la1_0.updated_at 
+    from
+        lead_management.lead_assignments la1_0 
+    where
+        la1_0.lead_id=? 
+        and la1_0.is_current
+Hibernate: 
+    select
+        la1_0.id,
+        la1_0.assigned_at,
+        la1_0.assigned_by,
+        la1_0.assigned_to,
+        la1_0.assignment_type,
+        la1_0.created_at,
+        la1_0.is_current,
+        la1_0.lead_id,
+        la1_0.tenant_id,
+        la1_0.updated_at 
+    from
+        lead_management.lead_assignments la1_0 
+    where
+        la1_0.lead_id=? 
+        and la1_0.is_current
+Hibernate: 
+    select
+        la1_0.id,
+        la1_0.assigned_at,
+        la1_0.assigned_by,
+        la1_0.assigned_to,
+        la1_0.assignment_type,
+        la1_0.created_at,
+        la1_0.is_current,
+        la1_0.lead_id,
+        la1_0.tenant_id,
+        la1_0.updated_at 
+    from
+        lead_management.lead_assignments la1_0 
+    where
+        la1_0.lead_id=? 
+        and la1_0.is_current
+Hibernate: 
+    select
+        la1_0.id,
+        la1_0.assigned_at,
+        la1_0.assigned_by,
+        la1_0.assigned_to,
+        la1_0.assignment_type,
+        la1_0.created_at,
+        la1_0.is_current,
+        la1_0.lead_id,
+        la1_0.tenant_id,
+        la1_0.updated_at 
+    from
+        lead_management.lead_assignments la1_0 
+    where
+        la1_0.lead_id=? 
+        and la1_0.is_current
+Hibernate: 
+    select
+        la1_0.id,
+        la1_0.assigned_at,
+        la1_0.assigned_by,
+        la1_0.assigned_to,
+        la1_0.assignment_type,
+        la1_0.created_at,
+        la1_0.is_current,
+        la1_0.lead_id,
+        la1_0.tenant_id,
+        la1_0.updated_at 
+    from
+        lead_management.lead_assignments la1_0 
+    where
+        la1_0.lead_id=? 
+        and la1_0.is_current
+Hibernate: 
+    select
+        la1_0.id,
+        la1_0.assigned_at,
+        la1_0.assigned_by,
+        la1_0.assigned_to,
+        la1_0.assignment_type,
+        la1_0.created_at,
+        la1_0.is_current,
+        la1_0.lead_id,
+        la1_0.tenant_id,
+        la1_0.updated_at 
+    from
+        lead_management.lead_assignments la1_0 
+    where
+        la1_0.lead_id=? 
+        and la1_0.is_current
+Hibernate: 
+    select
+        la1_0.id,
+        la1_0.assigned_at,
+        la1_0.assigned_by,
+        la1_0.assigned_to,
+        la1_0.assignment_type,
+        la1_0.created_at,
+        la1_0.is_current,
+        la1_0.lead_id,
+        la1_0.tenant_id,
+        la1_0.updated_at 
+    from
+        lead_management.lead_assignments la1_0 
+    where
+        la1_0.lead_id=? 
+        and la1_0.is_current
+Hibernate: 
+    select
+        la1_0.id,
+        la1_0.assigned_at,
+        la1_0.assigned_by,
+        la1_0.assigned_to,
+        la1_0.assignment_type,
+        la1_0.created_at,
+        la1_0.is_current,
+        la1_0.lead_id,
+        la1_0.tenant_id,
+        la1_0.updated_at 
+    from
+        lead_management.lead_assignments la1_0 
+    where
+        la1_0.lead_id=? 
+        and la1_0.is_current
+Hibernate: 
+    select
+        la1_0.id,
+        la1_0.assigned_at,
+        la1_0.assigned_by,
+        la1_0.assigned_to,
+        la1_0.assignment_type,
+        la1_0.created_at,
+        la1_0.is_current,
+        la1_0.lead_id,
+        la1_0.tenant_id,
+        la1_0.updated_at 
+    from
+        lead_management.lead_assignments la1_0 
+    where
+        la1_0.lead_id=? 
+        and la1_0.is_current
+Hibernate: 
+    select
+        la1_0.id,
+        la1_0.assigned_at,
+        la1_0.assigned_by,
+        la1_0.assigned_to,
+        la1_0.assignment_type,
+        la1_0.created_at,
+        la1_0.is_current,
+        la1_0.lead_id,
+        la1_0.tenant_id,
+        la1_0.updated_at 
+    from
+        lead_management.lead_assignments la1_0 
+    where
+        la1_0.lead_id=? 
+        and la1_0.is_current
+[2m2026-01-10T22:48:00.697+05:30[0;39m [31mERROR[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [nio-8083-exec-4][0;39m [2m[0;39m[36mc.c.c.exception.GlobalExceptionHandler  [0;39m [2m:[0;39m Unexpected error occurred
+
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585) ~[spring-webmvc-6.1.2.jar!/:6.1.2]
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52) ~[spring-webmvc-6.1.2.jar!/:6.1.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.2.jar!/:6.1.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.2.jar!/:6.1.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.2.jar!/:6.1.2]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.2.jar!/:6.1.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.2.jar!/:6.1.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.17.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at com.crm.common.security.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:77) ~[common-1.0.0.jar!/:1.0.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.2.jar!/:6.1.2]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225) ~[spring-security-config-6.2.1.jar!/:6.2.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.2.jar!/:6.1.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.17.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
+[2m2026-01-10T22:48:14.949+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [nio-8083-exec-4][0;39m [2m[0;39m[36mo.springdoc.api.AbstractOpenApiResource [0;39m [2m:[0;39m Init duration for springdoc-openapi is: 175 ms
+[2m2026-01-10T23:07:08.465+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [ionShutdownHook][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
+[2m2026-01-10T23:07:08.469+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [ionShutdownHook][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Shutdown initiated...
+[2m2026-01-10T23:07:08.479+05:30[0;39m [32m INFO[0;39m [35m75516[0;39m [2m---[0;39m [2m[lead-service] [ionShutdownHook][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Shutdown completed.

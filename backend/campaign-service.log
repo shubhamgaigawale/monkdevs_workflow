@@ -1,0 +1,94 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+[32m :: Spring Boot :: [39m              [2m (v3.2.1)[0;39m
+
+[2m2026-01-10T22:45:09.305+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mc.c.c.CampaignServiceApplication        [0;39m [2m:[0;39m Starting CampaignServiceApplication using Java 23.0.2 with PID 75518 (/Users/shubhamgaigawale/monkdevs_workflow/backend/campaign-service/target/campaign-service-1.0.0.jar started by shubhamgaigawale in /Users/shubhamgaigawale/monkdevs_workflow/backend)
+[2m2026-01-10T22:45:09.307+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mc.c.c.CampaignServiceApplication        [0;39m [2m:[0;39m No active profile set, falling back to 1 default profile: "default"
+[2m2026-01-10T22:45:10.712+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Multiple Spring Data modules found, entering strict repository configuration mode
+[2m2026-01-10T22:45:10.713+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2m2026-01-10T22:45:10.860+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 135 ms. Found 4 JPA repository interfaces.
+[2m2026-01-10T22:45:10.878+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Multiple Spring Data modules found, entering strict repository configuration mode
+[2m2026-01-10T22:45:10.879+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[2m2026-01-10T22:45:10.892+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36m.RepositoryConfigurationExtensionSupport[0;39m [2m:[0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.crm.campaignservice.repository.CampaignTemplateRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2m2026-01-10T22:45:10.893+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36m.RepositoryConfigurationExtensionSupport[0;39m [2m:[0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.crm.campaignservice.repository.MailchimpListRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2m2026-01-10T22:45:10.893+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36m.RepositoryConfigurationExtensionSupport[0;39m [2m:[0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.crm.campaignservice.repository.CampaignRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2m2026-01-10T22:45:10.894+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36m.RepositoryConfigurationExtensionSupport[0;39m [2m:[0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.crm.campaignservice.repository.CampaignRecipientRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2m2026-01-10T22:45:10.894+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+[2m2026-01-10T22:45:11.931+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port 8085 (http)
+[2m2026-01-10T22:45:11.945+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardService  [0;39m [2m:[0;39m Starting service [Tomcat]
+[2m2026-01-10T22:45:11.945+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardEngine   [0;39m [2m:[0;39m Starting Servlet engine: [Apache Tomcat/10.1.17]
+[2m2026-01-10T22:45:12.085+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/api]   [0;39m [2m:[0;39m Initializing Spring embedded WebApplicationContext
+[2m2026-01-10T22:45:12.087+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 2683 ms
+[2m2026-01-10T22:45:12.379+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mo.hibernate.jpa.internal.util.LogHelper [0;39m [2m:[0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
+[2m2026-01-10T22:45:12.488+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36morg.hibernate.Version                   [0;39m [2m:[0;39m HHH000412: Hibernate ORM core version 6.4.1.Final
+[2m2026-01-10T22:45:12.520+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mo.h.c.internal.RegionFactoryInitiator   [0;39m [2m:[0;39m HHH000026: Second-level cache disabled
+[2m2026-01-10T22:45:12.830+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mo.s.o.j.p.SpringPersistenceUnitInfo     [0;39m [2m:[0;39m No LoadTimeWeaver setup: ignoring JPA class transformer
+[2m2026-01-10T22:45:12.863+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Starting...
+[2m2026-01-10T22:45:13.201+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mcom.zaxxer.hikari.pool.HikariPool       [0;39m [2m:[0;39m HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@336d28a1
+[2m2026-01-10T22:45:13.203+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Start completed.
+[2m2026-01-10T22:45:13.225+05:30[0;39m [33m WARN[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36morg.hibernate.orm.deprecation           [0;39m [2m:[0;39m HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2m2026-01-10T22:45:14.055+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mo.h.e.t.j.p.i.JtaPlatformInitiator      [0;39m [2m:[0;39m HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2m2026-01-10T22:45:14.125+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2m2026-01-10T22:45:14.375+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mo.s.d.j.r.query.QueryEnhancerFactory    [0;39m [2m:[0;39m Hibernate is in classpath; If applicable, HQL parser will be used.
+[2m2026-01-10T22:45:15.767+05:30[0;39m [33m WARN[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mJpaBaseConfiguration$JpaWebConfiguration[0;39m [2m:[0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2m2026-01-10T22:45:15.787+05:30[0;39m [33m WARN[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36m.s.s.UserDetailsServiceAutoConfiguration[0;39m [2m:[0;39m 
+
+Using generated security password: beaae6ad-9de6-4906-b291-2e126ad7f93c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2m2026-01-10T22:45:16.258+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mo.s.s.web.DefaultSecurityFilterChain    [0;39m [2m:[0;39m Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5bee88e3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2dd25088, org.springframework.security.web.context.SecurityContextHolderFilter@41737438, org.springframework.security.web.header.HeaderWriterFilter@181b8d0c, org.springframework.web.filter.CorsFilter@586f1bef, org.springframework.web.filter.CorsFilter@546ab02b, org.springframework.security.web.authentication.logout.LogoutFilter@7f2163d3, com.crm.common.security.filter.JwtAuthenticationFilter@19b75b2b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2acacdf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d44f15d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bec83d5, org.springframework.security.web.session.SessionManagementFilter@249c96cf, org.springframework.security.web.access.ExceptionTranslationFilter@618b147b, org.springframework.security.web.access.intercept.AuthorizationFilter@65c2610f]
+[2m2026-01-10T22:45:16.935+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port 8085 (http) with context path '/api'
+[2m2026-01-10T22:45:17.008+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [           main][0;39m [2m[0;39m[36mc.c.c.CampaignServiceApplication        [0;39m [2m:[0;39m Started CampaignServiceApplication in 8.145 seconds (process running for 8.842)
+[2m2026-01-10T22:45:48.433+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [nio-8085-exec-1][0;39m [2m[0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/api]   [0;39m [2m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2m2026-01-10T22:45:48.433+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [nio-8085-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2026-01-10T22:45:48.433+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [nio-8085-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 0 ms
+[2m2026-01-10T22:45:48.503+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [nio-8085-exec-1][0;39m [2m[0;39m[36mc.c.c.service.CampaignService           [0;39m [2m:[0;39m Fetching campaigns for tenant: 98097a9c-c167-404e-8507-be1bdf8d015e
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.bounces,
+        c1_0.campaign_type,
+        c1_0.clicks,
+        c1_0.content,
+        c1_0.created_at,
+        c1_0.emails_sent,
+        c1_0.from_name,
+        c1_0.mailchimp_campaign_id,
+        c1_0.metadata,
+        c1_0.name,
+        c1_0.opens,
+        c1_0.preview_text,
+        c1_0.reply_to,
+        c1_0.scheduled_at,
+        c1_0.sent_at,
+        c1_0.status,
+        c1_0.subject,
+        c1_0.tenant_id,
+        c1_0.total_recipients,
+        c1_0.unique_clicks,
+        c1_0.unique_opens,
+        c1_0.unsubscribes,
+        c1_0.updated_at,
+        c1_0.user_id 
+    from
+        campaign_management.campaigns c1_0 
+    where
+        c1_0.tenant_id=? 
+        and c1_0.user_id=? 
+    order by
+        c1_0.created_at desc,
+        c1_0.created_at desc 
+    offset
+        ? rows 
+    fetch
+        first ? rows only
+[2m2026-01-10T22:48:45.386+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [nio-8085-exec-3][0;39m [2m[0;39m[36mo.springdoc.api.AbstractOpenApiResource [0;39m [2m:[0;39m Init duration for springdoc-openapi is: 197 ms
+[2m2026-01-10T23:07:08.433+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [ionShutdownHook][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
+[2m2026-01-10T23:07:08.439+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [ionShutdownHook][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Shutdown initiated...
+[2m2026-01-10T23:07:08.452+05:30[0;39m [32m INFO[0;39m [35m75518[0;39m [2m---[0;39m [2m[campaign-service] [ionShutdownHook][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Shutdown completed.

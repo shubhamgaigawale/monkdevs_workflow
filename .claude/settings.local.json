@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(psql:*)",
+      "Bash(cat:*)",
+      "Bash(./start-all.sh)",
+      "Bash(mvn clean install:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs ps:*)"
+    ]
+  }
+}

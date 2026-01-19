@@ -1,0 +1,123 @@
+HR Workflow & Lead Management
+1st June 2024
+OVERVIEW
+This document provides a detailed analysis of the requirements for Employee Management, HR Workflow, and Lead Management. It aims to thoroughly understand and address the specified needs.
+GOALS
+Employee Management (HR & Workflow)
+Implement time tracking, attendance recording, and performance reporting for agents.
+Lead Management
+Import and assign leads from Excel to agents.
+Ensure supervisors have full access and control over lead reassignment, while agents only see their own leads.
+Provide search functionality for supervisors to find specific customer data.
+Inbound Calls Management
+Manage, assign, and document inbound leads and client information.
+Marketing Email Campaign
+Use tools like Mailchimp to send bulk email campaigns to imported leads.
+Calendar Integration
+Integrate with calendar services like Calendly for appointment tracking.
+Document E-Signature
+Enable e-signature capabilities through the CRM or by integrating with PandaDoc/DocuSign.
+VOIP Integration
+Sync with VOIP services such as RingCentral for communication needs.
+Lead Reassignment
+Allow supervisors to reassign leads among agents within the CRM.
+Requirement
+HR Workflow
+1. Employee Management (HR & Workflow) - Like Time in when login and time out when log out and put on break while going out, attendance. we should be able to generate weekly, monthly, quarterly reports for agents.
+Functional Requirements Breakdown
+Time and Attendance Management:
+Login/Time In:
+Employees should log in to the system to mark their start time for the workday.
+Logout/Time Out:
+Employees should log out to mark the end of their workday.
+Break Management:
+Employees should be able to mark when they go on a break and when they return.
+Attendance Tracking:
+The system should keep a record of all logins, logouts, and break times.
+Performance Reporting:
+Report Generation:
+The system should generate performance reports for agents on a weekly, monthly, and quarterly basis.
+Metrics to Track:
+Key performance indicators (KPIs) such as hours worked, break times, punctuality, and other relevant metrics.
+Report Access:
+Reports should be accessible to HR personnel and supervisors.
+
+
+Lead Management
+Lead Management (Importing Leads from Excel and assigning them to the respective agents with only supervisors having access to all data and also reassign the Leads by shuffling them with different agents). Agent should see or search data in his login only and cannot see others' data. Search options for supervisors to look for a specific name or number of the customer from the database.
+Functional Requirements Breakdown
+Lead Management:
+Importing Leads from Excel:
+The system should allow supervisors to upload an Excel file containing leads.
+Leads from the Excel file should be parsed and stored in the system's database.
+Each lead should have necessary information such as name, contact details, and any other relevant data.
+Assigning Leads to Agents:
+Initial Assignment:
+Leads imported from the Excel file should be assigned to specific agents.
+The assignment process can be automated based on predefined rules (e.g., round-robin, load balancing) or manually by the supervisor.
+Reassigning Leads:
+Supervisors should have the ability to reassign leads from one agent to another.
+The system should facilitate easy shuffling and reassigning of leads between agents.
+Access Control:
+Supervisor Access:
+Supervisors should have full access to all lead data.
+They should be able to view, edit, assign, and reassign leads.
+Supervisors should also have advanced search capabilities to look for specific leads by customer name or contact number.
+Agent Access:
+Agents should only see the leads assigned to them.
+They should have the ability to search and view their leads but cannot access leads assigned to other agents.
+
+
+Inbound Management
+Inbound Calls Management (Manage and assign all unidentified inbound leads and assigned), they should be able to create and save new client data.
+Functional Requirements Breakdown
+Inbound Call Handling:
+Identification of Inbound Calls:
+Detects and log all inbound calls.
+Categorization of Calls:
+Distinguish between identified and unidentified inbound calls.
+Management of Unidentified Inbound Leads:
+Assignment of Unidentified Leads:
+Assign unidentified inbound leads to available agents for follow-up.
+Lead Tracking:
+Track the status and progress of unidentified leads until they are resolved.
+Client Data Management:
+Creation of New Client Records:
+Allow agents to create new client records during or after a call.
+Saving and Updating Client Data:
+Enable the saving and updating of client information in the system.
+Marketing Email
+Marketing Email Campaign (sending bulk email campaigns to the leads imported from Excel) using Mailchimp or similar email rely service provider.
+
+
+ 1. Fix RBAC issues first (30 mins)
+  2. Create Leave Type Management Page (2-3 hours)
+  3. Create Assign Salary Page (2-3 hours)
+  4. Create Start Onboarding Page (2-3 hours)
+
+
+
+
+
+
+
+
+Appointment tracking
+How to link the CRM with a Calendar service like (Calendly) for appointment tracking.
+Calendly API: Calendly provides APIs to access event data, schedule events, and manage user settings.
+CRM API: Our CRM system should also provide APIs to create, update, and retrieve appointment-related data.
+Authentication: Both Calendly and our CRM will require secure authentication mechanisms. Typically, OAuth 2.0 is used for this purpose.
+Calendly OAuth: Register your application with Calendly to get the client ID and client secret. Implement OAuth 2.0 flow to obtain access tokens.
+CRM OAuth: Similarly, ensure out CRM supports OAuth 2.0 and set up the authentication to get access tokens.
+Identify the data fields in Calendly (e.g., event details, invitee details) and map them to the corresponding fields in your CRM.
+Ensure you have a clear mapping of which Calendly data will be stored in the CRM and how it will be represented.
+E-Sign Document
+How to create and send out documents for e-sign using CRM OR How to link the CRM with an e-sign application like Panda Doc/DocuSign?
+PandaDoc/DocuSign API: Both provide comprehensive APIs to create, send, and track documents.
+CRM API: Your CRM system should offer APIs to access contact details, opportunities, and other relevant data.
+PandaDoc/DocuSign OAuth: Register your application to get the client ID and client secret. Implement the OAuth 2.0 flow to obtain access tokens.
+Identify the data fields in your CRM (e.g., contact details, deal information) and map them to the fields required by PandaDoc/DocuSign.
+Templates in PandaDoc/DocuSign: Create templates in your e-sign application with placeholder fields that will be populated with CRM data.
+How to sync (integrate) with our VOIP calling service(RingCentral)
+We should be able to move/assigned date once imported within the CRM, like taking leads from one agent and assigning them to another?
+

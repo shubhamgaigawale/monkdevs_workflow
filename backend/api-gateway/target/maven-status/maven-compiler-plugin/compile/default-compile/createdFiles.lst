@@ -1,0 +1,3 @@
+com/crm/apigateway/filter/JwtAuthenticationFilter$Config.class
+com/crm/apigateway/ApiGatewayApplication.class
+com/crm/apigateway/filter/JwtAuthenticationFilter.class

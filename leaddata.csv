@@ -1,0 +1,101 @@
+firstName,lastName,email,phone,company,status,priority,source,notes
+Asha,Deshpande,[asha.deshpande201@example.com](mailto:asha.deshpande201@example.com),9100000201,Acme Corp,NEW,LOW,Website,Ask
+Rajat,Sawant,[rajat.sawant202@example.com](mailto:rajat.sawant202@example.com),9100000202,Globex,CONTACTED,HIGH,Referral,Hot
+Nilesh,Shinde,[nilesh.shinde203@example.com](mailto:nilesh.shinde203@example.com),9100000203,Initech,QUALIFIED,MEDIUM,Ads,Ready
+Sonal,Patwardhan,[sonal.patwardhan204@example.com](mailto:sonal.patwardhan204@example.com),9100000204,Umbrella,LOST,LOW,Event,Cold
+Hemant,Chaudhari,[hemant.chaudhari205@example.com](mailto:hemant.chaudhari205@example.com),9100000205,Acme Corp,NEW,HIGH,Website,Good
+Pratiksha,Biradar,[pratiksha.biradar206@example.com](mailto:pratiksha.biradar206@example.com),9100000206,Globex,CONTACTED,MEDIUM,Referral,Mail
+Siddharth,Oak,[siddharth.oak207@example.com](mailto:siddharth.oak207@example.com),9100000207,Initech,QUALIFIED,LOW,Ads,Later
+Tejaswini,Gadgil,[tejaswini.gadgil208@example.com](mailto:tejaswini.gadgil208@example.com),9100000208,Umbrella,LOST,HIGH,Event,No
+Milind,Phadke,[milind.phadke209@example.com](mailto:milind.phadke209@example.com),9100000209,Acme Corp,NEW,MEDIUM,Website,Need
+Rupali,Salunkhe,[rupali.salunkhe210@example.com](mailto:rupali.salunkhe210@example.com),9100000210,Globex,CONTACTED,LOW,Referral,Plan
+Chinmay,Bapat,[chinmay.bapat211@example.com](mailto:chinmay.bapat211@example.com),9100000211,Initech,QUALIFIED,HIGH,Ads,Ok
+Prajakta,Nene,[prajakta.nene212@example.com](mailto:prajakta.nene212@example.com),9100000212,Umbrella,LOST,MEDIUM,Event,Later
+Omkar,Kale,[omkar.kale213@example.com](mailto:omkar.kale213@example.com),9100000213,Acme Corp,NEW,LOW,Website,Ask
+Vaishali,Shirodkar,[vaishali.shirodkar214@example.com](mailto:vaishali.shirodkar214@example.com),9100000214,Globex,CONTACTED,HIGH,Referral,Hot
+Aniket,Dongre,[aniket.dongre215@example.com](mailto:aniket.dongre215@example.com),9100000215,Initech,QUALIFIED,MEDIUM,Ads,Ready
+Sheetal,Varma,[sheetal.varma216@example.com](mailto:sheetal.varma216@example.com),9100000216,Umbrella,LOST,LOW,Event,Cold
+Sagar,Joshi,[sagar.joshi217@example.com](mailto:sagar.joshi217@example.com),9100000217,Acme Corp,NEW,HIGH,Website,Good
+Madhuri,Pandit,[madhuri.pandit218@example.com](mailto:madhuri.pandit218@example.com),9100000218,Globex,CONTACTED,MEDIUM,Referral,Mail
+Ketan,Rane,[ketan.rane219@example.com](mailto:ketan.rane219@example.com),9100000219,Initech,QUALIFIED,LOW,Ads,Later
+Archana,Velankar,[archana.velankar220@example.com](mailto:archana.velankar220@example.com),9100000220,Umbrella,LOST,HIGH,Event,No
+Nikhil,Bhandari,[nikhil.bhandari221@example.com](mailto:nikhil.bhandari221@example.com),9100000221,Acme Corp,NEW,MEDIUM,Website,Need
+Pallavi,Gore,[pallavi.gore222@example.com](mailto:pallavi.gore222@example.com),9100000222,Globex,CONTACTED,LOW,Referral,Plan
+Mandar,Kulaye,[mandar.kulaye223@example.com](mailto:mandar.kulaye223@example.com),9100000223,Initech,QUALIFIED,HIGH,Ads,Ok
+Shalini,Deodhar,[shalini.deodhar224@example.com](mailto:shalini.deodhar224@example.com),9100000224,Umbrella,LOST,MEDIUM,Event,Later
+Gaurav,Potdar,[gaurav.potdar225@example.com](mailto:gaurav.potdar225@example.com),9100000225,Acme Corp,NEW,LOW,Website,Ask
+Namrata,Apte,[namrata.apte226@example.com](mailto:namrata.apte226@example.com),9100000226,Globex,CONTACTED,HIGH,Referral,Hot
+Akshay,Kharche,[akshay.kharche227@example.com](mailto:akshay.kharche227@example.com),9100000227,Initech,QUALIFIED,MEDIUM,Ads,Ready
+Shubhangi,Tendulkar,[shubhangi.tendulkar228@example.com](mailto:shubhangi.tendulkar228@example.com),9100000228,Umbrella,LOST,LOW,Event,Cold
+Ravindra,Mhatre,[ravindra.mhatre229@example.com](mailto:ravindra.mhatre229@example.com),9100000229,Acme Corp,NEW,HIGH,Website,Good
+Supriya,Dalal,[supriya.dalal230@example.com](mailto:supriya.dalal230@example.com),9100000230,Globex,CONTACTED,MEDIUM,Referral,Mail
+Chetan,Kamat,[chetan.kamat231@example.com](mailto:chetan.kamat231@example.com),9100000231,Initech,QUALIFIED,LOW,Ads,Later
+Medha,Soman,[medha.soman232@example.com](mailto:medha.soman232@example.com),9100000232,Umbrella,LOST,HIGH,Event,No
+Prashant,Bhoir,[prashant.bhoir233@example.com](mailto:prashant.bhoir233@example.com),9100000233,Acme Corp,NEW,MEDIUM,Website,Need
+Renuka,Majumdar,[renuka.majumdar234@example.com](mailto:renuka.majumdar234@example.com),9100000234,Globex,CONTACTED,LOW,Referral,Plan
+Abhijit,Date,[abhijit.date235@example.com](mailto:abhijit.date235@example.com),9100000235,Initech,QUALIFIED,HIGH,Ads,Ok
+Sayali,Kulkarni,[sayali.kulkarni236@example.com](mailto:sayali.kulkarni236@example.com),9100000236,Umbrella,LOST,MEDIUM,Event,Later
+Rohan,Chitre,[rohan.chitre237@example.com](mailto:rohan.chitre237@example.com),9100000237,Acme Corp,NEW,LOW,Website,Ask
+Manisha,Thorat,[manisha.thorat238@example.com](mailto:manisha.thorat238@example.com),9100000238,Globex,CONTACTED,HIGH,Referral,Hot
+Sumeet,Karve,[sumeet.karve239@example.com](mailto:sumeet.karve239@example.com),9100000239,Initech,QUALIFIED,MEDIUM,Ads,Ready
+Tanvi,Godse,[tanvi.godse240@example.com](mailto:tanvi.godse240@example.com),9100000240,Umbrella,LOST,LOW,Event,Cold
+Uday,Parab,[uday.parab241@example.com](mailto:uday.parab241@example.com),9100000241,Acme Corp,NEW,HIGH,Website,Good
+Kshipra,Modak,[kshipra.modak242@example.com](mailto:kshipra.modak242@example.com),9100000242,Globex,CONTACTED,MEDIUM,Referral,Mail
+Atul,Keskar,[atul.keskar243@example.com](mailto:atul.keskar243@example.com),9100000243,Initech,QUALIFIED,LOW,Ads,Later
+Neelam,Manjrekar,[neelam.manjrekar244@example.com](mailto:neelam.manjrekar244@example.com),9100000244,Umbrella,LOST,HIGH,Event,No
+Jayant,Korde,[jayant.korde245@example.com](mailto:jayant.korde245@example.com),9100000245,Acme Corp,NEW,MEDIUM,Website,Need
+Bhagyashree,Walke,[bhagyashree.walke246@example.com](mailto:bhagyashree.walke246@example.com),9100000246,Globex,CONTACTED,LOW,Referral,Plan
+Harshal,Shelar,[harshal.shelar247@example.com](mailto:harshal.shelar247@example.com),9100000247,Initech,QUALIFIED,HIGH,Ads,Ok
+Anuradha,Pethe,[anuradha.pethe248@example.com](mailto:anuradha.pethe248@example.com),9100000248,Umbrella,LOST,MEDIUM,Event,Later
+Kunal,Mantri,[kunal.mantri249@example.com](mailto:kunal.mantri249@example.com),9100000249,Acme Corp,NEW,LOW,Website,Ask
+Purnima,Bagal,[purnima.bagal250@example.com](mailto:purnima.bagal250@example.com),9100000250,Globex,CONTACTED,HIGH,Referral,Hot
+Rushikesh,Borade,[rushikesh.borade251@example.com](mailto:rushikesh.borade251@example.com),9100000251,Initech,QUALIFIED,MEDIUM,Ads,Ready
+Shraddha,Palse,[shraddha.palse252@example.com](mailto:shraddha.palse252@example.com),9100000252,Umbrella,LOST,LOW,Event,Cold
+Vinit,Malusare,[vinit.malusare253@example.com](mailto:vinit.malusare253@example.com),9100000253,Acme Corp,NEW,HIGH,Website,Good
+Devika,Bendre,[devika.bendre254@example.com](mailto:devika.bendre254@example.com),9100000254,Globex,CONTACTED,MEDIUM,Referral,Mail
+Amol,Chafekar,[amol.chafekar255@example.com](mailto:amol.chafekar255@example.com),9100000255,Initech,QUALIFIED,LOW,Ads,Later
+Ketaki,Gupte,[ketaki.gupte256@example.com](mailto:ketaki.gupte256@example.com),9100000256,Umbrella,LOST,HIGH,Event,No
+Sanket,Dhumal,[sanket.dhumal257@example.com](mailto:sanket.dhumal257@example.com),9100000257,Acme Corp,NEW,MEDIUM,Website,Need
+Aparna,Belvalkar,[aparna.belvalkar258@example.com](mailto:aparna.belvalkar258@example.com),9100000258,Globex,CONTACTED,LOW,Referral,Plan
+Ninad,Bhave,[ninad.bhave259@example.com](mailto:ninad.bhave259@example.com),9100000259,Initech,QUALIFIED,HIGH,Ads,Ok
+Leena,Badhe,[leena.badhe260@example.com](mailto:leena.badhe260@example.com),9100000260,Umbrella,LOST,MEDIUM,Event,Later
+Mangesh,Chiplunkar,[mangesh.chiplunkar261@example.com](mailto:mangesh.chiplunkar261@example.com),9100000261,Acme Corp,NEW,LOW,Website,Ask
+Gargi,Raul,[gargi.raul262@example.com](mailto:gargi.raul262@example.com),9100000262,Globex,CONTACTED,HIGH,Referral,Hot
+Pranav,Gaitonde,[pranav.gaitonde263@example.com](mailto:pranav.gaitonde263@example.com),9100000263,Initech,QUALIFIED,MEDIUM,Ads,Ready
+Isha,Khare,[isha.khare264@example.com](mailto:isha.khare264@example.com),9100000264,Umbrella,LOST,LOW,Event,Cold
+Ruturaj,Khopkar,[ruturaj.khopkar265@example.com](mailto:ruturaj.khopkar265@example.com),9100000265,Acme Corp,NEW,HIGH,Website,Good
+Amruta,Inamdar,[amruta.inamdar266@example.com](mailto:amruta.inamdar266@example.com),9100000266,Globex,CONTACTED,MEDIUM,Referral,Mail
+Vishal,Sathe,[vishal.sathe267@example.com](mailto:vishal.sathe267@example.com),9100000267,Initech,QUALIFIED,LOW,Ads,Later
+Sakshi,Parkar,[sakshi.parkar268@example.com](mailto:sakshi.parkar268@example.com),9100000268,Umbrella,LOST,HIGH,Event,No
+Tushar,Dandekar,[tushar.dandekar269@example.com](mailto:tushar.dandekar269@example.com),9100000269,Acme Corp,NEW,MEDIUM,Website,Need
+Kirti,Joshi,[kirti.joshi270@example.com](mailto:kirti.joshi270@example.com),9100000270,Globex,CONTACTED,LOW,Referral,Plan
+Rohidas,Patankar,[rohidas.patankar271@example.com](mailto:rohidas.patankar271@example.com),9100000271,Initech,QUALIFIED,HIGH,Ads,Ok
+Mrunal,Kharat,[mrunal.kharat272@example.com](mailto:mrunal.kharat272@example.com),9100000272,Umbrella,LOST,MEDIUM,Event,Later
+Sachin,Pinge,[sachin.pinge273@example.com](mailto:sachin.pinge273@example.com),9100000273,Acme Corp,NEW,LOW,Website,Ask
+Chaitali,Barve,[chaitali.barve274@example.com](mailto:chaitali.barve274@example.com),9100000274,Globex,CONTACTED,HIGH,Referral,Hot
+Rakesh,Mane,[rakesh.mane275@example.com](mailto:rakesh.mane275@example.com),9100000275,Initech,QUALIFIED,MEDIUM,Ads,Ready
+Gayatri,Shastri,[gayatri.shastri276@example.com](mailto:gayatri.shastri276@example.com),9100000276,Umbrella,LOST,LOW,Event,Cold
+Dattatray,Kulye,[dattatray.kulye277@example.com](mailto:dattatray.kulye277@example.com),9100000277,Acme Corp,NEW,HIGH,Website,Good
+Mrunmayee,Desai,[mrunmayee.desai278@example.com](mailto:mrunmayee.desai278@example.com),9100000278,Globex,CONTACTED,MEDIUM,Referral,Mail
+Sharad,Kanade,[sharad.kanade279@example.com](mailto:sharad.kanade279@example.com),9100000279,Initech,QUALIFIED,LOW,Ads,Later
+Rasika,Mirajkar,[rasika.mirajkar280@example.com](mailto:rasika.mirajkar280@example.com),9100000280,Umbrella,LOST,HIGH,Event,No
+Bhushan,Gole,[bhushan.gole281@example.com](mailto:bhushan.gole281@example.com),9100000281,Acme Corp,NEW,MEDIUM,Website,Need
+Kalyani,Narkar,[kalyani.narkar282@example.com](mailto:kalyani.narkar282@example.com),9100000282,Globex,CONTACTED,LOW,Referral,Plan
+Pradeep,Hadkar,[pradeep.hadkar283@example.com](mailto:pradeep.hadkar283@example.com),9100000283,Initech,QUALIFIED,HIGH,Ads,Ok
+Mrudula,Talekar,[mrudula.talekar284@example.com](mailto:mrudula.talekar284@example.com),9100000284,Umbrella,LOST,MEDIUM,Event,Later
+Soham,Khot,[soham.khot285@example.com](mailto:soham.khot285@example.com),9100000285,Acme Corp,NEW,LOW,Website,Ask
+Shilpa,Rege,[shilpa.rege286@example.com](mailto:shilpa.rege286@example.com),9100000286,Globex,CONTACTED,HIGH,Referral,Hot
+Parag,Navale,[parag.navale287@example.com](mailto:parag.navale287@example.com),9100000287,Initech,QUALIFIED,MEDIUM,Ads,Ready
+Nupur,Agashe,[nupur.agashe288@example.com](mailto:nupur.agashe288@example.com),9100000288,Umbrella,LOST,LOW,Event,Cold
+Kedar,Khandekar,[kedar.khandekar289@example.com](mailto:kedar.khandekar289@example.com),9100000289,Acme Corp,NEW,HIGH,Website,Good
+Vrushali,Kulye,[vrushali.kulye290@example.com](mailto:vrushali.kulye290@example.com),9100000290,Globex,CONTACTED,MEDIUM,Referral,Mail
+Aadesh,Lotlikar,[aadesh.lotlikar291@example.com](mailto:aadesh.lotlikar291@example.com),9100000291,Initech,QUALIFIED,LOW,Ads,Later
+Snehal,Bapat,[snehal.bapat292@example.com](mailto:snehal.bapat292@example.com),9100000292,Umbrella,LOST,HIGH,Event,No
+Lalit,Sarpotdar,[lalit.sarpotdar293@example.com](mailto:lalit.sarpotdar293@example.com),9100000293,Acme Corp,NEW,MEDIUM,Website,Need
+Mitali,Chitre,[mitali.chitre294@example.com](mailto:mitali.chitre294@example.com),9100000294,Globex,CONTACTED,LOW,Referral,Plan
+Raghav,Palande,[raghav.palande295@example.com](mailto:raghav.palande295@example.com),9100000295,Initech,QUALIFIED,HIGH,Ads,Ok
+Ankita,Mandlik,[ankita.mandlik296@example.com](mailto:ankita.mandlik296@example.com),9100000296,Umbrella,LOST,MEDIUM,Event,Later
+Swaraj,Karnik,[swaraj.karnik297@example.com](mailto:swaraj.karnik297@example.com),9100000297,Acme Corp,NEW,LOW,Website,Ask
+Poonam,Natu,[poonam.natu298@example.com](mailto:poonam.natu298@example.com),9100000298,Globex,CONTACTED,HIGH,Referral,Hot
+Vijay,Gavankar,[vijay.gavankar299@example.com](mailto:vijay.gavankar299@example.com),9100000299,Initech,QUALIFIED,MEDIUM,Ads,Ready
+Eknath,Mokashi,[eknath.mokashi300@example.com](mailto:eknath.mokashi300@example.com),9100000300,Umbrella,LOST,LOW,Event,Cold

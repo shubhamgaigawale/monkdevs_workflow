@@ -1,0 +1,43 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.crm:call-service >------------------------
+[INFO] Building Call Service 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ call-service ---
+[INFO] Deleting /Users/shubhamgaigawale/monkdevs_workflow/backend/call-service/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ call-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ call-service ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 16 source files with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ call-service ---
+[INFO] skip non existing resourceDirectory /Users/shubhamgaigawale/monkdevs_workflow/backend/call-service/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ call-service ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ call-service ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ call-service ---
+[INFO] Building jar: /Users/shubhamgaigawale/monkdevs_workflow/backend/call-service/target/call-service-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot:3.2.1:repackage (repackage) @ call-service ---
+[INFO] Replacing main artifact /Users/shubhamgaigawale/monkdevs_workflow/backend/call-service/target/call-service-1.0.0.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/shubhamgaigawale/monkdevs_workflow/backend/call-service/target/call-service-1.0.0.jar.original
+[INFO] 
+[INFO] --- install:3.1.1:install (default-install) @ call-service ---
+[INFO] Installing /Users/shubhamgaigawale/monkdevs_workflow/backend/call-service/pom.xml to /Users/shubhamgaigawale/.m2/repository/com/crm/call-service/1.0.0/call-service-1.0.0.pom
+[INFO] Installing /Users/shubhamgaigawale/monkdevs_workflow/backend/call-service/target/call-service-1.0.0.jar to /Users/shubhamgaigawale/.m2/repository/com/crm/call-service/1.0.0/call-service-1.0.0.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.732 s
+[INFO] Finished at: 2026-01-18T14:46:09+05:30
+[INFO] ------------------------------------------------------------------------

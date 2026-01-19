@@ -1,0 +1,132 @@
+═══════════════════════════════════════════════════════════════════
+                    CRM SYSTEM - QUICK REFERENCE
+═══════════════════════════════════════════════════════════════════
+
+📱 APPLICATION ACCESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Frontend:           http://localhost:3000
+API Gateway:        http://localhost:8000
+Swagger API Docs:   http://localhost:8081/swagger-ui.html
+
+🔐 DEFAULT LOGIN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Email:              shubham@monkdevs.com
+Password:           Monkdevs@259
+Role:               Admin
+
+🚀 STARTUP COMMANDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Start All:          ./start-all.sh
+Stop All:           ./stop-all.sh
+Check Services:     lsof -i :8000
+
+🔌 SERVICE PORTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Frontend            3000
+API Gateway         8000
+User Service        8081
+HR Service          8082
+Lead Service        8083
+Call Service        8084
+Campaign Service    8085
+Notification        8087
+Integration         8088
+Config Server       8888
+
+📝 LOG FILES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Location:           /tmp/*.log
+View logs:          tail -f /tmp/api-gateway.log
+Search errors:      grep "ERROR" /tmp/*.log
+
+🔧 COMMON COMMANDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Check Java:         java -version
+Check Node:         node -v
+Check Database:     psql -U postgres -d crm_database
+Check Redis:        redis-cli ping
+Kill Port:          lsof -ti:8083 | xargs kill -9
+View Processes:     ps aux | grep java
+
+💾 DATABASE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Host:               localhost:5432
+Database:           crm_database
+User:               postgres (or crm_user)
+Connect:            psql -U postgres -d crm_database
+
+🔥 REDIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Host:               localhost:6379
+Start:              redis-server &
+Check:              redis-cli ping
+Monitor:            redis-cli monitor
+
+📊 HEALTH CHECKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+API Gateway:        http://localhost:8000/actuator/health
+User Service:       http://localhost:8081/actuator/health
+Lead Service:       http://localhost:8083/actuator/health
+
+🐛 TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Port in use:        lsof -ti:PORT | xargs kill -9
+DB not running:     brew services start postgresql
+Redis not running:  redis-server &
+Service won't start: Check logs in /tmp/*.log
+Frontend blank:     Check browser console (F12)
+
+📚 DOCUMENTATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+README.md           Project overview & quick start
+USER_MANUAL.md      Complete documentation (36 KB)
+QUICKSTART.md       5-minute setup guide
+SERVICES.md         All services detailed (20 KB)
+
+🔑 API AUTHENTICATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Login:
+curl -X POST http://localhost:8000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"user@example.com","password":"password"}'
+
+Use Token:
+curl http://localhost:8000/api/leads \
+  -H "Authorization: Bearer YOUR_TOKEN"
+
+📦 MAIN API ENDPOINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+POST   /api/auth/register
+POST   /api/auth/login
+GET    /api/leads
+POST   /api/leads
+GET    /api/calls
+POST   /api/calls
+GET    /api/campaigns
+POST   /api/campaigns
+GET    /api/time/status
+POST   /api/time/clock-in
+GET    /api/integrations
+
+🎯 QUICK TASKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Start system:       cd /path/to/project && ./start-all.sh
+Stop system:        ./stop-all.sh
+View logs:          tail -f /tmp/api-gateway.log
+Rebuild service:    cd backend/lead-service && mvn clean install
+Restart service:    lsof -ti:8083 | xargs kill -9 && java -jar target/*.jar
+Frontend rebuild:   cd frontend && npm run build
+
+💡 TIPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Start Config Server first (port 8888)
+- Start API Gateway last (port 8000)
+- Check health endpoints if service doesn't respond
+- Frontend needs VITE_API_URL=http://localhost:8000 in .env
+- All services need PostgreSQL & Redis running
+- JWT tokens expire in 1 hour
+- Use refresh token to get new access token
+
+═══════════════════════════════════════════════════════════════════
+                     Last Updated: 2026-01-11
+═══════════════════════════════════════════════════════════════════

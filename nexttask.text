@@ -1,0 +1,64 @@
+Create a system design for a SELF-HOSTED licensed product (not multi-tenant) built with Java Spring Boot microservices, React frontend, and PostgreSQL.
+
+Requirements:
+
+* Each customer will deploy the application in their own environment; one deployment = one company.
+* The product must support MODULE-BASED licensing (HRMS, Lead, Billing, Reports, Support, etc.).
+* When the application is opened for the first time, it must show a GLOBAL SETUP PAGE instead of login.
+* Setup page should capture: company name, domain/instance identifier, logo, portal name, admin user details, and license key.
+
+License Mechanism:
+
+* Vendor must have a LICENSE GENERATOR to create licenses with:
+
+  * enabled modules
+  * expiry date
+  * user limit
+  * unique license key
+  * optional domain binding.
+
+* On first setup the system must VALIDATE the license (offline signature or online API).
+
+* After validation the system must:
+
+  * activate only licensed modules
+  * create initial admin user
+  * store company branding
+  * mark instance as activated.
+
+Application Behavior:
+
+* Frontend must load menus, routes, dashboards, and components dynamically based on enabled modules.
+* If only HRMS is licensed, the UI must show only HRMS features and hide all others.
+* Backend must block APIs of non-licensed modules even if UI is bypassed.
+
+Design to Provide:
+
+* Database schema for:
+
+  * license
+  * enabled_modules
+  * system_settings
+  * company_profile.
+
+* API definitions for:
+
+  * license validation
+  * first time setup
+  * fetch enabled modules
+  * periodic expiry check.
+
+* Frontend design for:
+
+  * setup wizard
+  * dynamic menu rendering
+  * component/route guards.
+
+* Security considerations:
+
+  * JWT with role checks inside licensed modules
+  * prevention of manual module activation
+  * license tampering protection
+  * offline environments.
+
+Output must include architecture flow, tables, APIs, UI rules, and edge cases for a self-hosted product.
