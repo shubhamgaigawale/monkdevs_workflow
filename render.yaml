@@ -1,21 +1,17 @@
 databases:
-  # PostgreSQL Database (Free - 1GB, 90 day expiry)
   - name: crm-database
     databaseName: crm_db
     user: crm_user
     plan: free
 
 services:
-  # Redis Cache
   - type: redis
     name: crm-redis
     plan: free
     ipAllowList: []
 
-  # API Gateway
   - type: web
     name: crm-api-gateway
-    env: java
     plan: free
     buildCommand: cd backend/api-gateway && mvn clean package -DskipTests
     startCommand: java -Xmx400m -jar backend/api-gateway/target/api-gateway-1.0.0.jar
@@ -43,10 +39,8 @@ services:
       - key: JWT_SECRET
         generateValue: true
 
-  # User Service
   - type: web
     name: crm-user-service
-    env: java
     plan: free
     buildCommand: cd backend/user-service && mvn clean package -DskipTests
     startCommand: java -Xmx400m -jar backend/user-service/target/user-service-1.0.0.jar
