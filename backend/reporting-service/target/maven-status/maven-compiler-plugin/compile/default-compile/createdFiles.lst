@@ -1,9 +1,0 @@
-com/crm/reportingservice/dto/ReportRequest.class
-com/crm/reportingservice/repository/ReportRepository.class
-com/crm/reportingservice/ReportingServiceApplication.class
-com/crm/reportingservice/service/ReportingService.class
-com/crm/reportingservice/entity/Report$ReportType.class
-com/crm/reportingservice/entity/Report.class
-com/crm/reportingservice/entity/Report$ReportBuilder.class
-com/crm/reportingservice/config/SecurityConfig.class
-com/crm/reportingservice/controller/ReportingController.class

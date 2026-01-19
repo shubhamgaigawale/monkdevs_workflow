@@ -1,7 +1,0 @@
-/Users/shubhamgaigawale/monkdevs_workflow/backend/reporting-service/src/main/java/com/crm/reportingservice/dto/ReportRequest.java
-/Users/shubhamgaigawale/monkdevs_workflow/backend/reporting-service/src/main/java/com/crm/reportingservice/config/SecurityConfig.java
-/Users/shubhamgaigawale/monkdevs_workflow/backend/reporting-service/src/main/java/com/crm/reportingservice/service/ReportingService.java
-/Users/shubhamgaigawale/monkdevs_workflow/backend/reporting-service/src/main/java/com/crm/reportingservice/repository/ReportRepository.java
-/Users/shubhamgaigawale/monkdevs_workflow/backend/reporting-service/src/main/java/com/crm/reportingservice/controller/ReportingController.java
-/Users/shubhamgaigawale/monkdevs_workflow/backend/reporting-service/src/main/java/com/crm/reportingservice/entity/Report.java
-/Users/shubhamgaigawale/monkdevs_workflow/backend/reporting-service/src/main/java/com/crm/reportingservice/ReportingServiceApplication.java
