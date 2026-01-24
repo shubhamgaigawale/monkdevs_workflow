@@ -1,0 +1,88 @@
+# Docker Compose Override for Development Environment
+version: '3.8'
+
+services:
+  postgres:
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-crm_dev_db}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+
+  redis:
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+
+  # Enable PgAdmin by default in development
+  pgadmin:
+    profiles: []  # Override to enable by default
+
+  # Development configuration for services
+  api-gateway:
+    environment:
+      - LOGGING_LEVEL_ROOT=DEBUG
+      - LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_CLOUD_GATEWAY=DEBUG
+
+  user-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=DEBUG
+      - LOGGING_LEVEL_COM_CRM_USERSERVICE=DEBUG
+      - SPRING_JPA_SHOW_SQL=true
+
+  hr-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=DEBUG
+      - LOGGING_LEVEL_COM_CRM_HRSERVICE=DEBUG
+      - SPRING_JPA_SHOW_SQL=true
+
+  lead-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=DEBUG
+      - LOGGING_LEVEL_COM_CRM_LEADSERVICE=DEBUG
+      - SPRING_JPA_SHOW_SQL=true
+
+  call-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=DEBUG
+      - LOGGING_LEVEL_COM_CRM_CALLSERVICE=DEBUG
+      - SPRING_JPA_SHOW_SQL=true
+
+  campaign-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=DEBUG
+      - LOGGING_LEVEL_COM_CRM_CAMPAIGNSERVICE=DEBUG
+      - SPRING_JPA_SHOW_SQL=true
+
+  integration-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=DEBUG
+      - LOGGING_LEVEL_COM_CRM_INTEGRATIONSERVICE=DEBUG
+      - SPRING_JPA_SHOW_SQL=true
+
+  notification-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=DEBUG
+      - LOGGING_LEVEL_COM_CRM_NOTIFICATIONSERVICE=DEBUG
+      - SPRING_JPA_SHOW_SQL=true
+
+  billing-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=DEBUG
+      - LOGGING_LEVEL_COM_CRM_BILLINGSERVICE=DEBUG
+      - SPRING_JPA_SHOW_SQL=true
+
+  reporting-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=DEBUG
+      - LOGGING_LEVEL_COM_CRM_REPORTINGSERVICE=DEBUG
+      - SPRING_JPA_SHOW_SQL=true
+
+  customer-admin-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=DEBUG
+      - LOGGING_LEVEL_COM_CRM_CUSTOMERADMINSERVICE=DEBUG
+      - SPRING_JPA_SHOW_SQL=true
+
+  # Frontend development settings
+  frontend:
+    environment:
+      - VITE_API_URL=${VITE_API_URL:-http://localhost:8000}

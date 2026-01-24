@@ -68,3 +68,18 @@ spring-shell.log
 *.tmp
 *.temp
 .cache/
+
+# Docker & Environment
+.env
+.env.development
+.env.staging
+.env.production
+.env.current
+.deployment_*.info
+backups/
+*.sql
+
+# Docker volumes (if any local mounts)
+postgres_data/
+redis_data/
+pgadmin_data/

@@ -1,0 +1,115 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        # User Service Routes
+        - id: user-service
+          uri: ${USER_SERVICE_URL:http://user-service:8081}
+          predicates:
+            - Path=/api/auth/**, /api/users/**, /api/tenants/**, /api/license/**, /api/modules/**
+          filters:
+            - StripPrefix=1
+
+        # HR Service Routes
+        - id: hr-service
+          uri: ${HR_SERVICE_URL:http://hr-service:8082}
+          predicates:
+            - Path=/api/time/**, /api/attendance/**, /api/performance/**, /api/kpi/**, /api/leave/**, /api/onboarding/**, /api/salary/**, /api/tax/**
+          filters:
+            - StripPrefix=1
+
+        # Lead Service Routes
+        - id: lead-service
+          uri: ${LEAD_SERVICE_URL:http://lead-service:8083}
+          predicates:
+            - Path=/api/leads/**
+          filters:
+            - StripPrefix=1
+
+        # Call Service Routes
+        - id: call-service
+          uri: ${CALL_SERVICE_URL:http://call-service:8084}
+          predicates:
+            - Path=/api/calls/**
+          filters:
+            - StripPrefix=1
+
+        # Campaign Service Routes
+        - id: campaign-service
+          uri: ${CAMPAIGN_SERVICE_URL:http://campaign-service:8085}
+          predicates:
+            - Path=/api/campaigns/**
+          filters:
+            - StripPrefix=1
+
+        # Integration Service Routes
+        - id: integration-service
+          uri: ${INTEGRATION_SERVICE_URL:http://integration-service:8086}
+          predicates:
+            - Path=/api/integrations/**
+          filters:
+            - StripPrefix=1
+
+        # Notification Service Routes
+        - id: notification-service
+          uri: ${NOTIFICATION_SERVICE_URL:http://notification-service:8087}
+          predicates:
+            - Path=/api/notifications/**
+          filters:
+            - StripPrefix=1
+
+        # Billing Service Routes
+        - id: billing-service
+          uri: ${BILLING_SERVICE_URL:http://billing-service:8088}
+          predicates:
+            - Path=/api/billing/**, /api/subscriptions/**, /api/payments/**
+          filters:
+            - StripPrefix=1
+
+        # Reporting Service Routes
+        - id: reporting-service
+          uri: ${REPORTING_SERVICE_URL:http://reporting-service:8089}
+          predicates:
+            - Path=/api/reports/**
+          filters:
+            - StripPrefix=1
+
+        # Customer Admin Service Routes
+        - id: customer-admin-service
+          uri: ${CUSTOMER_ADMIN_SERVICE_URL:http://customer-admin-service:8090}
+          predicates:
+            - Path=/api/customer/**
+          filters:
+            - StripPrefix=1
+
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOriginPatterns:
+              - "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+              - PATCH
+            allowedHeaders: "*"
+            allowCredentials: true
+            exposedHeaders:
+              - "*"
+
+  redis:
+    host: ${SPRING_DATA_REDIS_HOST:redis}
+    port: ${SPRING_DATA_REDIS_PORT:6379}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always

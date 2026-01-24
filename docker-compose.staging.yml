@@ -1,0 +1,198 @@
+
+# Docker Compose Override for Staging Environment
+version: '3.8'
+
+services:
+  postgres:
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-crm_staging_db}
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '1'
+          memory: 1G
+
+  redis:
+    ports:
+      - "${REDIS_PORT:-6380}:6379"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+
+  # Staging configuration for services
+  api-gateway:
+    environment:
+      - LOGGING_LEVEL_ROOT=INFO
+      - LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_CLOUD_GATEWAY=INFO
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    restart: always
+
+  user-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=INFO
+      - SPRING_JPA_SHOW_SQL=false
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    restart: always
+
+  hr-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=INFO
+      - SPRING_JPA_SHOW_SQL=false
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    restart: always
+
+  lead-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=INFO
+      - SPRING_JPA_SHOW_SQL=false
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    restart: always
+
+  call-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=INFO
+      - SPRING_JPA_SHOW_SQL=false
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    restart: always
+
+  campaign-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=INFO
+      - SPRING_JPA_SHOW_SQL=false
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    restart: always
+
+  integration-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=INFO
+      - SPRING_JPA_SHOW_SQL=false
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    restart: always
+
+  notification-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=INFO
+      - SPRING_JPA_SHOW_SQL=false
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    restart: always
+
+  billing-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=INFO
+      - SPRING_JPA_SHOW_SQL=false
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    restart: always
+
+  reporting-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=INFO
+      - SPRING_JPA_SHOW_SQL=false
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    restart: always
+
+  customer-admin-service:
+    environment:
+      - LOGGING_LEVEL_ROOT=INFO
+      - SPRING_JPA_SHOW_SQL=false
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    restart: always
+
+  frontend:
+    environment:
+      - VITE_API_URL=${VITE_API_URL}
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+    restart: always

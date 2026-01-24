@@ -5,27 +5,31 @@ services:
   postgres:
     image: postgres:15-alpine
     container_name: crm-postgres
+    restart: unless-stopped
     environment:
-      POSTGRES_DB: crm_db
-      POSTGRES_USER: crm_user
-      POSTGRES_PASSWORD: crm_password
+      POSTGRES_DB: ${POSTGRES_DB:-crm_db}
+      POSTGRES_USER: ${POSTGRES_USER:-crm_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-crm_password}
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT:-5432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./infrastructure/docker/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U crm_user -d crm_db"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-crm_user} -d ${POSTGRES_DB:-crm_db}"]
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - crm-network
 
   # Redis Cache
   redis:
     image: redis:7-alpine
     container_name: crm-redis
+    restart: unless-stopped
     ports:
-      - "6379:6379"
+      - "${REDIS_PORT:-6379}:6379"
     command: redis-server --appendonly yes
     volumes:
       - redis_data:/data
@@ -34,19 +38,490 @@ services:
       interval: 10s
       timeout: 3s
       retries: 5
+    networks:
+      - crm-network
 
-  # pgAdmin (Optional - for database management)
+  # User Service
+  user-service:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: runtime
+    image: crm-user-service:latest
+    container_name: crm-user-service
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-crm_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-crm_user}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-crm_password}
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET}
+      SERVER_PORT: 8081
+    ports:
+      - "${USER_SERVICE_PORT:-8081}:8081"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/user-service/target/user-service-1.0.0.jar:/app/app.jar:ro
+    command: ["java", "-jar", "/app/app.jar"]
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8081/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      start_period: 60s
+      retries: 3
+    networks:
+      - crm-network
+
+  # HR Service
+  hr-service:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: runtime
+    image: crm-hr-service:latest
+    container_name: crm-hr-service
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-crm_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-crm_user}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-crm_password}
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET}
+      SERVER_PORT: 8082
+    ports:
+      - "${HR_SERVICE_PORT:-8082}:8082"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/hr-service/target/hr-service-1.0.0.jar:/app/app.jar:ro
+    command: ["java", "-jar", "/app/app.jar"]
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8082/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      start_period: 60s
+      retries: 3
+    networks:
+      - crm-network
+
+  # Lead Service
+  lead-service:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: runtime
+    image: crm-lead-service:latest
+    container_name: crm-lead-service
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-crm_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-crm_user}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-crm_password}
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET}
+      SERVER_PORT: 8083
+    ports:
+      - "${LEAD_SERVICE_PORT:-8083}:8083"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/lead-service/target/lead-service-1.0.0.jar:/app/app.jar:ro
+    command: ["java", "-jar", "/app/app.jar"]
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8083/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      start_period: 60s
+      retries: 3
+    networks:
+      - crm-network
+
+  # Call Service
+  call-service:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: runtime
+    image: crm-call-service:latest
+    container_name: crm-call-service
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-crm_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-crm_user}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-crm_password}
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET}
+      SERVER_PORT: 8084
+    ports:
+      - "${CALL_SERVICE_PORT:-8084}:8084"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/call-service/target/call-service-1.0.0.jar:/app/app.jar:ro
+    command: ["java", "-jar", "/app/app.jar"]
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8084/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      start_period: 60s
+      retries: 3
+    networks:
+      - crm-network
+
+  # Campaign Service
+  campaign-service:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: runtime
+    image: crm-campaign-service:latest
+    container_name: crm-campaign-service
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-crm_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-crm_user}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-crm_password}
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET}
+      SERVER_PORT: 8085
+    ports:
+      - "${CAMPAIGN_SERVICE_PORT:-8085}:8085"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/campaign-service/target/campaign-service-1.0.0.jar:/app/app.jar:ro
+    command: ["java", "-jar", "/app/app.jar"]
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8085/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      start_period: 60s
+      retries: 3
+    networks:
+      - crm-network
+
+  # Integration Service
+  integration-service:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: runtime
+    image: crm-integration-service:latest
+    container_name: crm-integration-service
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-crm_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-crm_user}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-crm_password}
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET}
+      SERVER_PORT: 8086
+    ports:
+      - "${INTEGRATION_SERVICE_PORT:-8086}:8086"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/integration-service/target/integration-service-1.0.0.jar:/app/app.jar:ro
+    command: ["java", "-jar", "/app/app.jar"]
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8086/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      start_period: 60s
+      retries: 3
+    networks:
+      - crm-network
+
+  # Notification Service
+  notification-service:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: runtime
+    image: crm-notification-service:latest
+    container_name: crm-notification-service
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-crm_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-crm_user}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-crm_password}
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET}
+      SERVER_PORT: 8087
+    ports:
+      - "${NOTIFICATION_SERVICE_PORT:-8087}:8087"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/notification-service/target/notification-service-1.0.0.jar:/app/app.jar:ro
+    command: ["java", "-jar", "/app/app.jar"]
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8087/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      start_period: 60s
+      retries: 3
+    networks:
+      - crm-network
+
+  # Billing Service
+  billing-service:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: runtime
+    image: crm-billing-service:latest
+    container_name: crm-billing-service
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-crm_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-crm_user}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-crm_password}
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET}
+      SERVER_PORT: 8088
+    ports:
+      - "${BILLING_SERVICE_PORT:-8088}:8088"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/billing-service/target/billing-service-1.0.0.jar:/app/app.jar:ro
+    command: ["java", "-jar", "/app/app.jar"]
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8088/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      start_period: 60s
+      retries: 3
+    networks:
+      - crm-network
+
+  # Reporting Service
+  reporting-service:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: runtime
+    image: crm-reporting-service:latest
+    container_name: crm-reporting-service
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-crm_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-crm_user}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-crm_password}
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET}
+      SERVER_PORT: 8089
+    ports:
+      - "${REPORTING_SERVICE_PORT:-8089}:8089"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/reporting-service/target/reporting-service-1.0.0.jar:/app/app.jar:ro
+    command: ["java", "-jar", "/app/app.jar"]
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8089/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      start_period: 60s
+      retries: 3
+    networks:
+      - crm-network
+
+  # Customer Admin Service
+  customer-admin-service:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: runtime
+    image: crm-customer-admin-service:latest
+    container_name: crm-customer-admin-service
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-crm_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-crm_user}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-crm_password}
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET}
+      SERVER_PORT: 8090
+    ports:
+      - "${CUSTOMER_ADMIN_SERVICE_PORT:-8090}:8090"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/customer-admin-service/target/customer-admin-service-1.0.0.jar:/app/app.jar:ro
+    command: ["java", "-jar", "/app/app.jar"]
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8090/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      start_period: 60s
+      retries: 3
+    networks:
+      - crm-network
+
+  # API Gateway
+  api-gateway:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: runtime
+    image: crm-api-gateway:latest
+    container_name: crm-api-gateway
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      JWT_SECRET: ${JWT_SECRET}
+      SERVER_PORT: 8000
+      # Service URLs for gateway routing
+      USER_SERVICE_URL: http://user-service:8081
+      HR_SERVICE_URL: http://hr-service:8082
+      LEAD_SERVICE_URL: http://lead-service:8083
+      CALL_SERVICE_URL: http://call-service:8084
+      CAMPAIGN_SERVICE_URL: http://campaign-service:8085
+      INTEGRATION_SERVICE_URL: http://integration-service:8086
+      NOTIFICATION_SERVICE_URL: http://notification-service:8087
+      BILLING_SERVICE_URL: http://billing-service:8088
+      REPORTING_SERVICE_URL: http://reporting-service:8089
+      CUSTOMER_ADMIN_SERVICE_URL: http://customer-admin-service:8090
+    ports:
+      - "${API_GATEWAY_PORT:-8000}:8000"
+    depends_on:
+      user-service:
+        condition: service_healthy
+      hr-service:
+        condition: service_healthy
+      lead-service:
+        condition: service_healthy
+      call-service:
+        condition: service_healthy
+      campaign-service:
+        condition: service_healthy
+      integration-service:
+        condition: service_healthy
+      notification-service:
+        condition: service_healthy
+      billing-service:
+        condition: service_healthy
+      reporting-service:
+        condition: service_healthy
+      customer-admin-service:
+        condition: service_healthy
+    volumes:
+      - ./backend/api-gateway/target/api-gateway-1.0.0.jar:/app/app.jar:ro
+    command: ["java", "-jar", "/app/app.jar"]
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8000/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      start_period: 90s
+      retries: 3
+    networks:
+      - crm-network
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: crm-frontend:latest
+    container_name: crm-frontend
+    restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT:-3000}:80"
+    depends_on:
+      api-gateway:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 3s
+      start_period: 10s
+      retries: 3
+    networks:
+      - crm-network
+
+  # PgAdmin (Optional - for database management)
   pgadmin:
     image: dpage/pgadmin4:latest
     container_name: crm-pgadmin
+    restart: unless-stopped
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@crm.local
-      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@crm.local}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
     ports:
-      - "5050:80"
+      - "${PGADMIN_PORT:-5050}:80"
     depends_on:
       - postgres
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - crm-network
+    profiles:
+      - tools
 
 volumes:
   postgres_data:
+    driver: local
   redis_data:
+    driver: local
+  pgadmin_data:
+    driver: local
+
+networks:
+  crm-network:
+    driver: bridge
