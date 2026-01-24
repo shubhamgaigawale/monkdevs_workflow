@@ -145,12 +145,12 @@ public class SalaryService {
                 .name(component.getName())
                 .code(component.getCode())
                 .componentType(SalaryComponent.ComponentType.valueOf(component.getComponentType().name()))
-                .calculationType(component.getCalculationType() != null ? component.getCalculationType().name() : null)
+                .calculationType(component.getCalculationType() != null ? SalaryComponent.CalculationType.valueOf(component.getCalculationType().name()) : null)
                 .percentage(component.getPercentage())
                 .isTaxable(component.getIsTaxable())
                 .isFixed(component.getIsFixed())
                 .displayOrder(component.getDisplayOrder())
-                .status(component.getStatus().name())
+                .status(SalaryComponent.Status.valueOf(component.getStatus().name()))
                 .build();
     }
 

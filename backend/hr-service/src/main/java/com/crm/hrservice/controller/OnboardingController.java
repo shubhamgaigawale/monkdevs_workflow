@@ -3,6 +3,7 @@ package com.crm.hrservice.controller;
 import com.crm.common.dto.ApiResponse;
 import com.crm.hrservice.dto.request.*;
 import com.crm.hrservice.dto.response.*;
+import com.crm.hrservice.entity.EmployeeDocument;
 import com.crm.hrservice.service.OnboardingService;
 import com.crm.hrservice.service.FileStorageService;
 import io.swagger.v3.oas.annotations.Operation;
