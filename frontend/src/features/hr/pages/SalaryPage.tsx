@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Download, Wallet, TrendingUp, Coins, CreditCard } from 'lucide-react';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { StatsCard } from '@/components/common/StatsCard';
-import { ColumnDef } from '@tanstack/react-table'
+import { DataTable, type Column } from '@/components/common/DataTable'
 
 import {
   useMySalary,
@@ -113,10 +113,10 @@ const SalaryPage = () => {
     return <Badge variant={variants[status] || 'outline'}>{status}</Badge>;
   };
 
-  export const columns: ColumnDef<SalarySlip>[] = [
+const columns: Column<SalarySlip>[] = [
     {
       header: 'Month/Year',
-      accessorFn: (row) =>
+      cell: (row) =>
         new Date(row.year, row.month - 1).toLocaleDateString('en-IN', {
           month: 'long',
           year: 'numeric',
@@ -125,37 +125,36 @@ const SalaryPage = () => {
     {
       header: 'Gross Salary',
       accessorKey: 'grossSalary',
-      cell: ({ getValue }) =>
-        `₹${Number(getValue()).toLocaleString('en-IN')}`,
+      cell: (row) =>
+        `₹${Number(row.grossSalary).toLocaleString('en-IN')}`,
     },
     {
       header: 'Deductions',
       accessorKey: 'totalDeductions',
-      cell: ({ getValue }) =>
-        `₹${Number(getValue()).toLocaleString('en-IN')}`,
+      cell: (row) =>
+        `₹${Number(row.totalDeductions).toLocaleString('en-IN')}`,
     },
     {
       header: 'Net Salary',
       accessorKey: 'netSalary',
-      cell: ({ getValue }) => (
+      cell: (row) => (
         <span className="font-semibold text-green-600">
-          ₹{Number(getValue()).toLocaleString('en-IN')}
+          ₹{Number(row.netSalary).toLocaleString('en-IN')}
         </span>
       ),
     },
     {
       header: 'Status',
       accessorKey: 'status',
-      cell: ({ getValue }) => getStatusBadge(getValue() as SalarySlip['status']),
+      cell: (row) => getStatusBadge(row.status),
     },
     {
       header: 'Actions',
-      id: 'actions',
-      cell: ({ row }) => (
+      cell: (row) => (
         <Button
           variant="outline"
           size="sm"
-          onClick={() => handleDownload(row.original.id)}
+          onClick={() => handleDownload(row.id)}
           disabled={downloadSlip.isPending}
         >
           <Download className="h-4 w-4 mr-2" />
@@ -259,7 +258,6 @@ const SalaryPage = () => {
             <DataTable
               data={salarySlips}
               columns={columns}
-              searchable={false}
             />
           ) : (
             <div className="text-center py-8 text-muted-foreground">
