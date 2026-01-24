@@ -215,7 +215,7 @@ export function HolidayCalendarPage() {
           <DataTable
             columns={columns}
             data={currentYearHolidays}
-            loading={isLoading}
+            isLoading={isLoading}
             emptyMessage="No holidays found for this year."
           />
         </CardContent>

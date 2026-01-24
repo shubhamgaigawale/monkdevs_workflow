@@ -219,7 +219,7 @@ export function LeaveManagementPage() {
           <DataTable
             columns={columns}
             data={requests?.content || []}
-            loading={requestsLoading}
+            isLoading={requestsLoading}
             emptyMessage="No leave requests found. Apply for leave to get started!"
           />
         </CardContent>
