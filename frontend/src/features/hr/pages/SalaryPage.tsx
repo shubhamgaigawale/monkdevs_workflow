@@ -4,7 +4,8 @@ import { Badge } from '@/components/ui/badge';
 import { Download, Wallet, TrendingUp, Coins, CreditCard } from 'lucide-react';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { StatsCard } from '@/components/common/StatsCard';
-import { DataTable, type Column } from '@/components/common/DataTable';
+import { ColumnDef } from '@tanstack/react-table'
+
 import {
   useMySalary,
   useMySalarySlips,
@@ -112,41 +113,49 @@ const SalaryPage = () => {
     return <Badge variant={variants[status] || 'outline'}>{status}</Badge>;
   };
 
-  const columns: Column<SalarySlip>[] = [
+  const columns: ColumnDef<SalarySlip>[] = [
     {
       header: 'Month/Year',
-      accessor: (row) => new Date(row.year, row.month - 1).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' }),
+      accessorFn: (row) =>
+        new Date(row.year, row.month - 1).toLocaleDateString('en-IN', {
+          month: 'long',
+          year: 'numeric',
+        }),
     },
     {
       header: 'Gross Salary',
-      accessor: (row) => `₹${row.grossSalary.toLocaleString('en-IN')}`,
+      accessorKey: 'grossSalary',
+      cell: ({ getValue }) =>
+        `₹${Number(getValue()).toLocaleString('en-IN')}`,
     },
     {
       header: 'Deductions',
-      accessor: (row) => `₹${row.totalDeductions.toLocaleString('en-IN')}`,
+      accessorKey: 'totalDeductions',
+      cell: ({ getValue }) =>
+        `₹${Number(getValue()).toLocaleString('en-IN')}`,
     },
     {
       header: 'Net Salary',
-      accessor: (row) => `₹${row.netSalary.toLocaleString('en-IN')}`,
-      cell: (row) => (
+      accessorKey: 'netSalary',
+      cell: ({ getValue }) => (
         <span className="font-semibold text-green-600">
-          ₹{row.netSalary.toLocaleString('en-IN')}
+          ₹{Number(getValue()).toLocaleString('en-IN')}
         </span>
       ),
     },
     {
       header: 'Status',
-      accessor: (row) => row.status,
-      cell: (row) => getStatusBadge(row.status),
+      accessorKey: 'status',
+      cell: ({ getValue }) => getStatusBadge(getValue() as SalarySlip['status']),
     },
     {
       header: 'Actions',
-      accessor: () => '',
-      cell: (row) => (
+      id: 'actions',
+      cell: ({ row }) => (
         <Button
           variant="outline"
           size="sm"
-          onClick={() => handleDownload(row.id)}
+          onClick={() => handleDownload(row.original.id)}
           disabled={downloadSlip.isPending}
         >
           <Download className="h-4 w-4 mr-2" />
@@ -154,7 +163,7 @@ const SalaryPage = () => {
         </Button>
       ),
     },
-  ];
+  ]
 
   return (
     <AppLayout title="Salary & Compensation" subtitle="View your salary details and download salary slips">
