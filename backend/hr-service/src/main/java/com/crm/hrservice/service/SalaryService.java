@@ -144,7 +144,7 @@ public class SalaryService {
                 .tenantId(component.getTenantId())
                 .name(component.getName())
                 .code(component.getCode())
-                .componentType(component.getComponentType().name())
+                .componentType(SalaryComponent.ComponentType.valueOf(component.getComponentType().name()))
                 .calculationType(component.getCalculationType() != null ? component.getCalculationType().name() : null)
                 .percentage(component.getPercentage())
                 .isTaxable(component.getIsTaxable())
