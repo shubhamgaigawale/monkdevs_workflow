@@ -5,6 +5,8 @@ import { Download, Wallet, TrendingUp, Coins, CreditCard } from 'lucide-react';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { StatsCard } from '@/components/common/StatsCard';
 import { ColumnDef } from '@tanstack/react-table'
+import { DataTable } from '@/components/common/DataTable';
+
 
 import {
   useMySalary,
@@ -113,7 +115,7 @@ const SalaryPage = () => {
     return <Badge variant={variants[status] || 'outline'}>{status}</Badge>;
   };
 
-  const columns: ColumnDef<SalarySlip>[] = [
+   const columns: ColumnDef<SalarySlip>[] = [
     {
       header: 'Month/Year',
       accessorFn: (row) =>

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils/cn'
+import { ColumnDef } from '@tanstack/react-table'
 
 export interface Column<T> {
   header: string
@@ -11,7 +12,7 @@ export interface Column<T> {
 }
 
 interface DataTableProps<T> {
-  columns: Column<T>[]
+  columns: ColumnDef<T, unknown>[]
   data: T[]
   isLoading?: boolean
   pagination?: {
@@ -26,6 +27,8 @@ interface DataTableProps<T> {
   onRowSelect?: (id: string) => void
   getRowId?: (row: T) => string
   emptyMessage?: string
+  searchable?:boolean
+  
 }
 
 export function DataTable<T>({
